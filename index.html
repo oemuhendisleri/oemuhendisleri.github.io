@@ -261,16 +261,6 @@
       </p>
     </div>
   </div>
-  <script>
-    try {
-      if (sessionStorage.getItem('oem_splash_seen') === '1') {
-        var s = document.getElementById('splash-screen');
-        if (s) s.style.display = 'none';
-        document.documentElement.classList.remove('splash-open');
-        document.body.classList.remove('splash-open');
-      }
-    } catch (e) {}
-  </script>
 
   <!-- ========================================================= -->
   <!-- STICKY MICROSOFT-STYLE CORPORATE HEADER                   -->
@@ -2214,9 +2204,6 @@
       const dismissSplash = () => {
         if (!splashActive || !splash) return;
         splashActive = false;
-        try {
-          sessionStorage.setItem('oem_splash_seen', '1');
-        } catch (e) {}
         splash.classList.add('is-dismissed');
         document.documentElement.classList.remove('splash-open');
         document.body.classList.remove('splash-open');
